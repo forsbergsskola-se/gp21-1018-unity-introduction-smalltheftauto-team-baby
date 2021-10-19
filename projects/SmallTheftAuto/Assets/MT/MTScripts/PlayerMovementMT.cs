@@ -7,7 +7,7 @@ public class PlayerMovementMT : MonoBehaviour
     
     
 
-    void Update()
+    void FixedUpdate()
     {
         
         if (Input.GetKey(KeyCode.W))
@@ -24,7 +24,7 @@ public class PlayerMovementMT : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             
         {
-            transform.Rotate(0f, 0f, 180*Time.deltaTime*Input.GetAxis("Horizontal"));
+            transform.Rotate(0f, 0f, -180*Time.deltaTime*Input.GetAxis("Horizontal"));
         }
     }
         
