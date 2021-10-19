@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class PlayerMovementND : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -23,7 +19,7 @@ public class PlayerMovementND : MonoBehaviour
         
         //Make player walk backwards, when S-key is pressed
         //Make player turn left, when A-key is pressed
-        transform.Rotate(xAngle, yAngle, zAngle);
+        //transform.Rotate(xAngle, yAngle, zAngle);
         //Make player turn right, if D is pressed
         
         //Update, Movement, Frame Rate (FPS)
