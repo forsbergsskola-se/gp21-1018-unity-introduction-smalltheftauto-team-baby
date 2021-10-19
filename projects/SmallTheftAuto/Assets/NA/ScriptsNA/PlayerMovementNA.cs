@@ -1,22 +1,29 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
-public class PlayerMovementNA : MonoBehaviour{
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    private Vector2 movement;
+public class PlayerMovementNA : MonoBehaviour
+{
+    
+    void FixedUpdate(){
+        
+        if (Input.GetKey(KeyCode.W)){
+            transform.Translate(0f, 15f*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
+            
+        }
 
+        if (Input.GetKey(KeyCode.S)){
+            transform.Translate(0f, 15f*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
+        }
 
-    private void Update(){
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey(KeyCode.A)){
+            transform.Rotate(0f, 0f, -180*Time.deltaTime*Input.GetAxis("Horizontal"));
+        }
+
+        if (Input.GetKey(KeyCode.D)){
+            transform.Rotate(0f, 0f, -180*Time.deltaTime*Input.GetAxis("Horizontal"));
+        }
     }
-
-    private void FixedUpdate(){
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
+        
 }
-
-
