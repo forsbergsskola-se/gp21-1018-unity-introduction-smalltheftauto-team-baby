@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PalyerMovementMT : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    private Vector2 movement;
+
+
+    private void Update(){
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void FixedUpdate(){
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
