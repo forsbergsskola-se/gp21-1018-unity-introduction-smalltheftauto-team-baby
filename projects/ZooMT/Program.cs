@@ -9,34 +9,38 @@ namespace ZooMT
         public void Main()
         {
             {
-                Zoo<Animal> animalZoo = new Zoo<Animal>();
-                animalZoo.AddAnimal(new Fish()); // OKAY
-                animalZoo.AddAnimal(new Clownfish()); // OKAY
-                animalZoo.AddAnimal(new Lion()); // OKAY
-                animalZoo.AddAnimal(new Donkey()); // OKAY
+                Zoo<Fish> fishZoo = new Zoo<Fish>();
+                fishZoo.AddAnimal(new Fish()); 
+                fishZoo.AddAnimal(new Clownfish()); 
             }
-            
-            
         }
-        
-        
     }
     
     class Zoo<TAnimal> where  TAnimal : Animal
     {
-        private Animal[] zooanimals = {};
+        private Animal[] animalZoo = new Animal[1];
+
+        // public Zoo<Fish> fishZoo = new Zoo<Fish>();
+        // public Zoo<Mammal> mammalZoo = new Zoo<Mammal>();
         
+
         public bool HasAnimal<TAnimal>()
         {
-            return true;
+            if (animalZoo is Animal)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void AddAnimal(TAnimal animal)
         {
-            Array.Resize(ref zooanimals, zooanimals.Length + 1);
-            zooanimals[zooanimals.Length] = animal;
+            Array.Resize(ref animalZoo, animalZoo.Length + 1);
+            animalZoo[animalZoo.Length - 1] = animal;
         }
-        
     }
 
     class Animal 
