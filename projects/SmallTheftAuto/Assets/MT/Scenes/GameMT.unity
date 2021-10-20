@@ -135,7 +135,8 @@ GameObject:
   - component: {fileID: 74902849}
   - component: {fileID: 74902848}
   - component: {fileID: 74902847}
-  - component: {fileID: 74902851}
+  - component: {fileID: 74902852}
+  - component: {fileID: 74902853}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -224,7 +225,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &74902851
+--- !u!114 &74902852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74902846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b412f1a7e6f9f3e4f966d85c552f56b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2015507790}
+  carMovement: {fileID: 0}
+  car: {fileID: 74902846}
+--- !u!114 &74902853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,7 +249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 74902846}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e77feceb36eb8e4e8fb2dbaeebeab2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6149553c03b46cb41a8dcb3badb7779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &232145642
@@ -1004,6 +1020,7 @@ GameObject:
   - component: {fileID: 2015507791}
   - component: {fileID: 2015507792}
   - component: {fileID: 2015507793}
+  - component: {fileID: 2015507794}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1053,6 +1070,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogPreFab: {fileID: 7903830118010870749, guid: 25b1109803a0f9e43a63af04162eefce, type: 3}
+--- !u!114 &2015507794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015507790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b412f1a7e6f9f3e4f966d85c552f56b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2015507790}
+  carMovement: {fileID: 0}
+  car: {fileID: 74902846}
 --- !u!1 &2064443112
 GameObject:
   m_ObjectHideFlags: 0
