@@ -9,7 +9,7 @@ public class CarMoveSO : MonoBehaviour
     
 
     public Camera cam;
-    private Vector2 mousePos;
+    //private Vector2 mousePos;
 
     private Vector2 moveDiraction;
 
@@ -24,16 +24,16 @@ public class CarMoveSO : MonoBehaviour
 
         moveDiraction = new Vector2(movement.x, movement.y).normalized;
 
-        mousePos =cam.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos =cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        Vector2 lookDir = mousePos - rb.position;
+        //Vector2 lookDir = mousePos - rb.position;
 
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
-        rb.rotation = angle;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
+        //rb.rotation = angle;
     }
 }
