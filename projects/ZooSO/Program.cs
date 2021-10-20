@@ -8,17 +8,17 @@ namespace ZooSO
         
         static void Main(string[] args)
         {
-            
+           
         }
         
         class Zoo <AnimalT> where AnimalT : Animal
-        { 
-            Animal [] zooanimals = {};
+        {
+            private Animal[] zooanimals = new Animal[0];
 
             
             public bool HasAnimal<AnimalT>()
             {
-    
+                
                 // retunera något annat än true
                 return true;
             }
@@ -26,7 +26,7 @@ namespace ZooSO
             public void AddAnimal(AnimalT animal)
             { 
                 Array.Resize<Animal>(ref zooanimals, zooanimals.Length + 1);
-                //zooanimals[zooanimals.Length - 1] = animal;
+                zooanimals[zooanimals.Length - 1] = animal;
             }
         }
 
@@ -62,7 +62,7 @@ namespace ZooSO
 
         class Salmon : Fish
         {
-
+            
         }
 
         class Clownfish : Fish
