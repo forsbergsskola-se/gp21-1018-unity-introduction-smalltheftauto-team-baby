@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class VehicleSO : MonoBehaviour
 {
-    public GameObject player;
-    public CarMoveSO carMovement;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            
+    public GameObject playerSO;
+    //public CarMoveSO carMoveSo;
+  
+  
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.F)){
+            if (PlayerIsOutsideCar()){
+                if(PlayerIsCloseToCar()){
+                    EnterCar();
+                }
+            }
+            else {
+                LeaveCar();
+            }        
         }
     }
+    bool PlayerIsOutsideCar(){
+        return this.playerSO.activeInHierarchy;
+    }
+
+    bool PlayerIsCloseToCar(){
+        return Vector3.Distance(this.playerSO.transform.position, this.transform.position) < 1;
+    }
+
+    void EnterCar(){
+        this.playerSO.SetActive(false);
+        this.GetComponent<CarMoveSO>().enabled = true;
+        //FindObjectOfType<PlayerMoveSO>()
+    }
+
+    void LeaveCar(){
+        this.playerSO.transform.position = this.transform.position;
+        this.playerSO.SetActive(true);
+        this.GetComponent<CarMoveSO>().enabled = false;
+    }
+
 }
