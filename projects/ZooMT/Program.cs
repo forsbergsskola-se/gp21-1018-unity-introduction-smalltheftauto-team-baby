@@ -18,26 +18,28 @@ namespace ZooMT
             
             
         }
-        public void AddAnimal()
+        
+        
+    }
+    
+    class Zoo<TAnimal> where  TAnimal : Animal
+    {
+        private Animal[] zooanimals = {};
+        
+        public bool HasAnimal<TAnimal>()
         {
-            Animal animal = new Animal();
+            return true;
         }
 
-        public void HasAnimal()
+        public void AddAnimal(TAnimal animal)
         {
-            
+            Array.Resize(ref zooanimals, zooanimals.Length + 1);
+            zooanimals[zooanimals.Length] = animal;
         }
         
-        
-        
     }
-    
-    class Zoo<T> where  T : Animal
-    {
-        
-    }
-    
-    class Animal
+
+    class Animal 
     {
         
     }
@@ -81,10 +83,4 @@ namespace ZooMT
     {
         
     }
-    
-   
-
-   
-
-
 }
