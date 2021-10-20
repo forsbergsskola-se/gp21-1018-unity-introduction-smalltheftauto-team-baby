@@ -9,7 +9,9 @@ public class VehicleNA : MonoBehaviour{
     void Update(){
         if (Input.GetKeyDown(KeyCode.F)){
             if (PlayerIsOutsideCar()){
+                if(PlayerIsCloseToCar()){
                 EnterCar();
+                }
             }
             else {
             LeaveCar();
@@ -19,6 +21,10 @@ public class VehicleNA : MonoBehaviour{
     
     bool PlayerIsOutsideCar(){
         return this.playerNa.activeInHierarchy;
+    }
+
+    bool PlayerIsCloseToCar(){
+        return Vector3.Distance(this.playerNa.transform.position, this.transform.position) < 1;
     }
 
     void EnterCar(){
