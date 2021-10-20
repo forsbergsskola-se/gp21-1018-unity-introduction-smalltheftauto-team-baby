@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 630522431}
   - component: {fileID: 630522433}
   - component: {fileID: 630522434}
+  - component: {fileID: 630522435}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -412,6 +413,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &630522435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630522430}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f71843fc170b443adc36bc4e8878e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 630522433}
+  cam: {fileID: 1700777500}
 --- !u!1 &777040419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1045,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.614201, y: 1}
+    m_SensorSize: {x: 1.8840237, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
