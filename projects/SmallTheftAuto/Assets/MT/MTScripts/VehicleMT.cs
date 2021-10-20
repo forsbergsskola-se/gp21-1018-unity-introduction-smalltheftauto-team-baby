@@ -8,16 +8,20 @@ public class VehicleMT : MonoBehaviour
 {
     public GameObject player;
     public CarMovementMT carMovement;
-    public GameObject car;
+    
 
     
     void Update()
     {
         if (Input.GetKey(KeyCode.F))
         {
-            if ( player.activeInHierarchy)
+            if (PlayerIsOutsideCar())
             {
-                EnterCar();
+                if (PlayerIsCloseToCar())
+                {
+                    EnterCar();
+                }
+                
             }
             else
             {
@@ -26,6 +30,16 @@ public class VehicleMT : MonoBehaviour
             
         }
     }
+
+    bool PlayerIsCloseToCar()
+    {
+        return Vector3.Distance(player.transform.position, transform.position) < 1;
+    }
+
+    bool PlayerIsOutsideCar() {
+        return !player.activeInHierarchy;
+    }
+
 
     private void EnterCar()
     {
