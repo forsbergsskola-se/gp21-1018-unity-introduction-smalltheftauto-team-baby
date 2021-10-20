@@ -1,13 +1,10 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
-public class PlayerMovementMT : MonoBehaviour
-{
-    
-    
 
-   void FixedUpdate()
+public class CarMovementMT : MonoBehaviour
+{
+    void FixedUpdate()
     {
         
         if (Input.GetKey(KeyCode.W))
@@ -32,6 +29,4 @@ public class PlayerMovementMT : MonoBehaviour
             transform.Rotate(0f, 0f, -180*Time.deltaTime*Input.GetAxis("Horizontal"));
         }
     }
-        
 }
- 
