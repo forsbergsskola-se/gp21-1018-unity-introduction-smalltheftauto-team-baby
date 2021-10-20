@@ -31,7 +31,7 @@ public class VehicleSO : MonoBehaviour
     void EnterCar(){
         this.playerSO.SetActive(false);
         this.GetComponent<CarMoveSO>().enabled = true;
-        //FindObjectOfType<PlayerMoveSO>()
+        
     }
 
     void LeaveCar(){
