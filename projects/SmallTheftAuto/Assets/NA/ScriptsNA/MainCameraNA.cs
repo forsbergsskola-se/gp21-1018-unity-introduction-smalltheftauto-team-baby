@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainCameraNA : MonoBehaviour
-{
+public class MainCameraNA : MonoBehaviour{
     public float moveSpeed;
     public GameObject target;
-
     private Transform rigTransform; 
 
-    void Start()
-    {
+    void Start(){
         rigTransform = this.transform.parent;
     }
 
-    void FixedUpdate () {
+    void FixedUpdate (){
         if(target == null){
             return;
         }
