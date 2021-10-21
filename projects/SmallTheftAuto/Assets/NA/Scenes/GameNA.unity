@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 655135444}
   - component: {fileID: 655135443}
   - component: {fileID: 655135442}
+  - component: {fileID: 655135445}
   m_Layer: 0
   m_Name: MainCameraNA
   m_TagString: Untagged
@@ -463,6 +464,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655135445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655135441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3066086df2cf04ba5a4a1cd22132cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  target: {fileID: 2027162340}
 --- !u!1 &658155704
 GameObject:
   m_ObjectHideFlags: 0
