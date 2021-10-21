@@ -6,21 +6,30 @@ using UnityEngine.UI;
 
 public class CountTimerSO : MonoBehaviour
 {
-  public float currentTime;
+  public float timePassed;
   public float startingTime;
 
    [SerializeField] Text countText;
 
   private void Start()
   {
-    currentTime = startingTime;
+    timePassed = startingTime;
+    
   }
 
 
   private void Update()
   {
-    currentTime += 1 * Time.deltaTime;
-    countText.text = currentTime.ToString("0,0s");
+     timePassed += 1 * Time.deltaTime;
+     countText.text = timePassed.ToString("0");
+    
+    countText.color = Color.yellow;
+    
+    //countText.text = timePassed.ToString("0,0s");
+    //string minutes = ((int) startingTime / 60).ToString();
+    //string seconds = (startingTime % 60).ToString("f2");
+    //countText.text = minutes + ":" + seconds;
+
   }
 }
 
