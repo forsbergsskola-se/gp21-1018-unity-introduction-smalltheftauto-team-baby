@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MainCameraNA : MonoBehaviour{
     public float moveSpeed;
-    public GameObject target;
+    public GameObject targetPlayer;
+    public GameObject targetCar;
     private Transform rigTransform; 
 
     void Start(){
@@ -12,10 +13,16 @@ public class MainCameraNA : MonoBehaviour{
     }
 
     void FixedUpdate (){
-        if(target == null){
+        if(targetPlayer == null){
             return;
         }
-        rigTransform.position = Vector3.Lerp(rigTransform.position, target.transform.position, 
+        if(targetPlayer.activeInHierarchy){
+            rigTransform.position = Vector3.Lerp(rigTransform.position, targetPlayer.transform.position, 
+            Time.deltaTime * moveSpeed);
+        }
+        else{
+        rigTransform.position = Vector3.Lerp(rigTransform.position, targetCar.transform.position, 
         Time.deltaTime * moveSpeed);
+        }
     }
 }
