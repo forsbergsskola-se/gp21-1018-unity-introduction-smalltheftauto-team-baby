@@ -6,40 +6,35 @@ namespace ZooMT
     
     class Progam
     {
-        public void Main()
+        public static void Main()
         {
-            {
-                Zoo<Fish> fishZoo = new Zoo<Fish>();
-                fishZoo.AddAnimal(new Fish()); 
-                fishZoo.AddAnimal(new Clownfish()); 
-            }
+        {
+            Zoo<Fish> fishZoo = new Zoo<Fish>();
+            fishZoo.AddAnimal(new Salmon());
+            fishZoo.AddAnimal(new Clownfish());
+            fishZoo.AddAnimal(new Salmon());
+            Console.WriteLine("This should be True: "+fishZoo.HasAnimal<Clownfish>());
+        }        
         }
     }
     
     class Zoo<TAnimal> where  TAnimal : Animal
     {
-        private Animal[] animalZoo = new Animal[1];
+        private TAnimal[] animals = new TAnimal[1];
 
-        // public Zoo<Fish> fishZoo = new Zoo<Fish>();
-        // public Zoo<Mammal> mammalZoo = new Zoo<Mammal>();
-        
-
-        public bool HasAnimal<TAnimal>()
+        public bool HasAnimal<TSpecies>() where  TSpecies : TAnimal
         {
-            if (animalZoo is Animal)
-            {
-                return true;
-            }
-            else
+            if (animals is !TSpecies)
             {
                 return false;
             }
+            
         }
 
         public void AddAnimal(TAnimal animal)
         {
-            Array.Resize(ref animalZoo, animalZoo.Length + 1);
-            animalZoo[animalZoo.Length - 1] = animal;
+            Array.Resize(ref animals, animals.Length + 1);
+            animals[^1] = animal;
         }
     }
 
