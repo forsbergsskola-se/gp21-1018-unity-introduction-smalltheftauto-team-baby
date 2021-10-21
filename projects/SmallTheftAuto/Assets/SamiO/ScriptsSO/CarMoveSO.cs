@@ -4,36 +4,32 @@ using UnityEngine;
 
 public class CarMoveSO : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    
 
-    public Camera cam;
-    //private Vector2 mousePos;
-
-    private Vector2 moveDiraction;
-
-    private Vector2 movement;
-
-    // Update is called once per frame
-    void Update()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical"); 
-        
-
-        moveDiraction = new Vector2(movement.x, movement.y).normalized;
-
-        //mousePos =cam.ScreenToWorldPoint(Input.mousePosition);
-    }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0f, 10f*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
+            
+        }
 
-        //Vector2 lookDir = mousePos - rb.position;
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0f, 10f*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
+        }
 
-        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
-        //rb.rotation = angle;
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(0f, 0f, -165*Time.deltaTime*Input.GetAxis("Horizontal"));
+        }
+
+        if (Input.GetKey(KeyCode.D))
+            
+        {
+            transform.Rotate(0f, 0f, -165*Time.deltaTime*Input.GetAxis("Horizontal"));
+        }
+
+        
     }
 }

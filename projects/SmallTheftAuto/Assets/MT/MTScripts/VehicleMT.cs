@@ -21,36 +21,30 @@ public class VehicleMT : MonoBehaviour
                 {
                     EnterCar();
                 }
-                
             }
             else
             {
                 LeaveCar();
             }
-            
         }
     }
 
-    bool PlayerIsCloseToCar()
-    {
-        return Vector3.Distance(player.transform.position, transform.position) < 1;
+    bool PlayerIsOutsideCar(){
+        return this.player.activeInHierarchy;
     }
 
-    bool PlayerIsOutsideCar() {
-        return !player.activeInHierarchy;
+    bool PlayerIsCloseToCar(){
+        return Vector3.Distance(this.player.transform.position, this.transform.position) < 1;
     }
 
-
-    private void EnterCar()
-    {
-        player.SetActive(false);
-        carMovement.enabled = true;
+    void EnterCar(){
+        this.player.SetActive(false);
+        this.carMovement.enabled = true;
     }
 
-    private void LeaveCar()
-    {
-        player.transform.position = transform.position;
-        player.SetActive(true);
-        carMovement.enabled = true;
+    void LeaveCar(){
+        this.player.transform.position = this.transform.position;
+        this.player.SetActive(true);
+        this.carMovement.enabled = false;
     }
 }
