@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class VehicleMT : MonoBehaviour
 {
-    public GameObject player;
-    public CarMovementMT carMovement;
+    public GameObject playerMT;
+    //public CarMovementMT carMovement;
     
 
     
@@ -30,21 +30,21 @@ public class VehicleMT : MonoBehaviour
     }
 
     bool PlayerIsOutsideCar(){
-        return this.player.activeInHierarchy;
+        return this.playerMT.activeInHierarchy;
     }
 
     bool PlayerIsCloseToCar(){
-        return Vector3.Distance(this.player.transform.position, this.transform.position) < 1;
+        return Vector3.Distance(this.playerMT.transform.position, this.transform.position) < 1;
     }
 
     void EnterCar(){
-        this.player.SetActive(false);
-        this.carMovement.enabled = true;
+        this.playerMT.SetActive(false);
+        GetComponent<CarMovementMT>().enabled = true ;
     }
 
     void LeaveCar(){
-        this.player.transform.position = this.transform.position;
-        this.player.SetActive(true);
-        this.carMovement.enabled = false;
+        this.playerMT.transform.position = this.transform.position;
+        this.playerMT.SetActive(true);
+        GetComponent<CarMovementMT>().enabled = false ;
     }
 }
