@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ZooMT
 {
@@ -20,12 +21,19 @@ namespace ZooMT
     
     class Zoo<TAnimal> where  TAnimal : Animal
     {
-        private TAnimal[] animals = new TAnimal[1];
+        //private TAnimal[] animals = new TAnimal[1];
+        private List<TAnimal> animals = new List<TAnimal>();
+        
 
         public bool HasAnimal<TSpecies>() where  TSpecies : TAnimal
         {
-            if (animals is !TSpecies)
             {
+                for (int i = 0; i < animals.Count(); i++)
+                    if (animals[i] is TSpecies)
+                    {
+                        return true;
+                    }
+
                 return false;
             }
             
@@ -33,8 +41,9 @@ namespace ZooMT
 
         public void AddAnimal(TAnimal animal)
         {
-            Array.Resize(ref animals, animals.Length + 1);
-            animals[^1] = animal;
+            // Array.Resize(ref animals, animals.Length + 1);
+            // animals[^1] = animal;
+            animals.Add(animal);
         }
     }
 
