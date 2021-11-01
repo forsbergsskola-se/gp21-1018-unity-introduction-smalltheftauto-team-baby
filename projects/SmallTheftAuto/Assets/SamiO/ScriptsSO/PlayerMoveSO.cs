@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMoveSO : MonoBehaviour
 {
-
+    
     
     private void FixedUpdate()
     {
