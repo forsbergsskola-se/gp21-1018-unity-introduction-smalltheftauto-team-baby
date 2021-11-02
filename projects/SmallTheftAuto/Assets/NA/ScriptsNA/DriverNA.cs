@@ -6,8 +6,8 @@ public class DriverNA : MonoBehaviour
 {
     void Update(){
         if (Input.GetButton("Interact-Vehicle")){
-            VehicleNA[] cars = FindbjectsOfType<VehicleNA>();
-            VehicleNA closestCar;
+            VehicleNA[] cars = FindObjectsOfType<VehicleNA>();
+            VehicleNA closestCar = null;
             float shortestDistance = 3;
             foreach(VehicleNA vehicle in cars){
                float carDistance = Vector3.Distance(this.transform.position, vehicle.transform.position); 

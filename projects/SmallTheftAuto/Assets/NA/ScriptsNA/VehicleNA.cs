@@ -21,13 +21,13 @@ public class VehicleNA : MonoBehaviour{
 
     public void EnterCar(DriverNA driver){
         this.driver = driver;
-        driver.SetActive(false);
+        driver.gameObject.SetActive(false);
         this.carMovementNa.enabled = true;
     }
 
     public void LeaveCar(){
         this.driver.transform.position = this.transform.position;
-        this.driver.SetActive(true);
+        this.driver.gameObject.SetActive(true);
         this.carMovementNa.enabled = false;
         this.driver = null;
     }
