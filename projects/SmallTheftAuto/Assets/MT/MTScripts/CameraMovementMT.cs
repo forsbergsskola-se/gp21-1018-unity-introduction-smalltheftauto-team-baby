@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMovementMT : MonoBehaviour
 {
     public float moveSpeed;
-    public GameObject targetPlayer;
-    public GameObject targetCar;
+    public GameObject targetPlayerMT;
+    public GameObject targetCarMT;
     private Transform rigTransform;
     
     
@@ -19,15 +19,15 @@ public class CameraMovementMT : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(targetPlayer == null){
+        if(targetPlayerMT == null){
             return;
         }
-        if(targetPlayer.activeInHierarchy){
-            rigTransform.position = Vector3.Lerp(rigTransform.position, targetPlayer.transform.position, 
+        if(targetPlayerMT.activeInHierarchy){
+            rigTransform.position = Vector3.Lerp(rigTransform.position, targetPlayerMT.transform.position, 
                 Time.deltaTime * moveSpeed);
         }
         else{
-            rigTransform.position = Vector3.Lerp(rigTransform.position, targetCar.transform.position, 
+            rigTransform.position = Vector3.Lerp(rigTransform.position, targetCarMT.transform.position, 
                 Time.deltaTime * moveSpeed);
         }
     }
