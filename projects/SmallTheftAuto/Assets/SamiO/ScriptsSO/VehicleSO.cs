@@ -5,7 +5,7 @@ using UnityEngine;
 public class VehicleSO : MonoBehaviour
 {
     public GameObject playerSO;
-    //public CarMoveSO carMoveSo;
+   
   
   
     void Update(){
@@ -30,14 +30,16 @@ public class VehicleSO : MonoBehaviour
 
     void EnterCar(){
         this.playerSO.SetActive(false);
-        this.GetComponent<CarMoveSO>().enabled = true;
+        this.GetComponent<CarMove2SO>().enabled = true;
+        
         
     }
 
     void LeaveCar(){
         this.playerSO.transform.position = this.transform.position;
         this.playerSO.SetActive(true);
-        this.GetComponent<CarMoveSO>().enabled = false;
+        this.GetComponent<CarMove2SO>().enabled = false;
+        
     }
 
 }
