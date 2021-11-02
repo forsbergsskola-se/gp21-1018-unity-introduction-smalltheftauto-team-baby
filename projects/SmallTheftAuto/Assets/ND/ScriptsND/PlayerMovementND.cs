@@ -11,7 +11,6 @@ public class PlayerMoveND : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(0f, 8f*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
-            
         }
         if (Input.GetKey(KeyCode.S))
         {
