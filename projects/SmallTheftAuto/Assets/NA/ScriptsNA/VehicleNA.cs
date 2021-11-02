@@ -5,6 +5,7 @@ using UnityEngine;
 public class VehicleNA : MonoBehaviour{
     public GameObject playerNa;
     private CarMovementNA carMovementNa;
+    private DriverNA driver;
 
     void Start(){
         carMovementNa = FindObjectOfType<CarMovementNA>();
@@ -12,34 +13,23 @@ public class VehicleNA : MonoBehaviour{
 
     void Update(){
         if (Input.GetButton("Interact-Vehicle")){
-            if (PlayerIsOutsideCar()){
-                if(PlayerIsCloseToCar()){
-                EnterCar();
-                }
-            }
-            else {
-            LeaveCar();
+            if (!(driver == null)){
+                LeaveCar();
             }        
         }
     }
-    
-    bool PlayerIsOutsideCar(){
-        return this.playerNa.activeInHierarchy;
-    }
 
-    bool PlayerIsCloseToCar(){
-        return Vector3.Distance(this.playerNa.transform.position, this.transform.position) < 2;
-    }
-
-    public void EnterCar(){
-        this.playerNa.SetActive(false);
+    public void EnterCar(DriverNA driver){
+        this.driver = driver;
+        driver.SetActive(false);
         this.carMovementNa.enabled = true;
     }
 
     public void LeaveCar(){
-        this.playerNa.transform.position = this.transform.position;
-        this.playerNa.SetActive(true);
+        this.driver.transform.position = this.transform.position;
+        this.driver.SetActive(true);
         this.carMovementNa.enabled = false;
+        this.driver = null;
     }
 
 }
