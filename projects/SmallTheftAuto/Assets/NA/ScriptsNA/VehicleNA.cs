@@ -7,7 +7,7 @@ public class VehicleNA : MonoBehaviour{
     public CarMovementNA carMovementNa;
 
     void Update(){
-        if (Input.GetKeyDown(KeyCode.F)){
+        if (Input.GetKeyDown("Interact-Vehicle")){
             if (PlayerIsOutsideCar()){
                 if(PlayerIsCloseToCar()){
                 EnterCar();
