@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class PlayerMoveND : MonoBehaviour
+public class PlayerMovementND : MonoBehaviour
 {
     private void FixedUpdate()
     {
