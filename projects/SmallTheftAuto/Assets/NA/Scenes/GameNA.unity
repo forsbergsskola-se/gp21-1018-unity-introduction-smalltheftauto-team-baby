@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNa: {fileID: 2027162340}
-  carMovementNa: {fileID: 124925744}
 --- !u!1 &645923775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027162341}
   - component: {fileID: 2027162342}
+  - component: {fileID: 2027162343}
   m_Layer: 0
   m_Name: PlayerNA
   m_TagString: Untagged
@@ -1232,6 +1232,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   turnSpeed: 180
+--- !u!114 &2027162343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027162340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4ccabb501ff5e43b6dc59e6bc9453b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2119597067
 GameObject:
   m_ObjectHideFlags: 0
