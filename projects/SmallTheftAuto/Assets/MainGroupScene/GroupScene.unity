@@ -550,7 +550,7 @@ Tilemap:
       e13: 2.16e-43
       e20: -1.5672966e-13
       e21: -6.209961e-28
-      e22: 0.00000000108236
+      e22: 0.0000000011342935
       e23: -6.209961e-28
       e30: 4.5904e-41
       e31: 9.05e-43
@@ -563,7 +563,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -7, y: -7, z: 0}
-  m_Size: {x: 7, y: 9, z: 1}
+  m_Size: {x: 39, y: 9, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
