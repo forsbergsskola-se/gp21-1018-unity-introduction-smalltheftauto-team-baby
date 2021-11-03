@@ -31,6 +31,8 @@ public class PlayerMoveSO : MonoBehaviour
             
         {
             transform.Rotate(0f, 0f, -160*Time.deltaTime*Input.GetAxis("Horizontal"));
-        }
+        } 
+        
+       
     }
 }

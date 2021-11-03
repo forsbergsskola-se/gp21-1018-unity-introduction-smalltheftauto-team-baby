@@ -5,6 +5,9 @@ using UnityEngine;
 public class NewCarInputSO : MonoBehaviour
 {
     private NewCarScriptSO newCarScriptSO;
+
+    public bool brake;
+    
     void Awake()
     {
         newCarScriptSO = GetComponent<NewCarScriptSO>();
@@ -16,7 +19,7 @@ public class NewCarInputSO : MonoBehaviour
         Vector2 inputVector = Vector2.zero;
 
         inputVector.x = Input.GetAxis("Horizontal");
-        inputVector.y = Input.GetAxis("Vertical"); 
+        inputVector.y = Input.GetAxis("Vertical");
         
         
         newCarScriptSO.SetInputVector(inputVector);
