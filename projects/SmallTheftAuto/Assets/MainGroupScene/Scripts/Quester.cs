@@ -5,7 +5,7 @@ using UnityEngine;
 public class Quester : MonoBehaviour{
     void Update(){
         if (Input.GetButton("Interact-Phonebooth")){
-            Phonebox[] phones = FindObjectsOfType<PhoneBox>();
+            PhoneBox[] phones = FindObjectsOfType<PhoneBox>();
             PhoneBox closestPhone = null;
             float shortestDistance = 2;
             foreach(PhoneBox phone in phones){
@@ -16,7 +16,7 @@ public class Quester : MonoBehaviour{
                }
             }
             if (!(closestPhone == null)){
-                closestPhone.StartQuest(this);
+                closestPhone.StartQuest();
             }
         }
     }
