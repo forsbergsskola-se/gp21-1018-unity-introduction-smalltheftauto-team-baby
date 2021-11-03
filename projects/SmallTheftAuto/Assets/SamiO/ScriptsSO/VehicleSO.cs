@@ -30,7 +30,8 @@ public class VehicleSO : MonoBehaviour
 
     void EnterCar(){
         this.playerSO.SetActive(false);
-        this.GetComponent<CarMove2SO>().enabled = true;
+        this.GetComponent<NewCarInputSO>().enabled = true;
+        this.GetComponent<NewCarScriptSO>().enabled = true;
         
         
         
@@ -39,7 +40,8 @@ public class VehicleSO : MonoBehaviour
     void LeaveCar(){
         this.playerSO.transform.position = this.transform.position;
         this.playerSO.SetActive(true);
-        this.GetComponent<CarMove2SO>().enabled = false;
+        this.GetComponent<NewCarInputSO>().enabled = false;
+        this.GetComponent<NewCarScriptSO>().enabled = false;
         
         
     }
