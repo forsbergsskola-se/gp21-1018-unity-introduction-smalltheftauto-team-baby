@@ -10,11 +10,11 @@ public class NewCarScriptSO : MonoBehaviour
     public float turnFactor = 3.5f;
     public float maxSpeed = 20;
 
-    private float accelerationInput = 1;
-    private float sterringInput = 1;
-    private float velocityVsUp = 1;
+    private float accelerationInput = 0;
+    private float sterringInput = 0;
+    private float velocityVsUp = 0;
 
-    private float rotationAngle = 1;
+    private float rotationAngle = 0;
 
     private Rigidbody2D carBody2D;
     void Awake()
@@ -42,7 +42,11 @@ public class NewCarScriptSO : MonoBehaviour
 
         if (carBody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
             return;
-       
+        
+         if (Input.GetKey(KeyCode.Space))
+         {
+             
+         }
         
         if (accelerationInput == 0)
             carBody2D.drag = Mathf.Lerp(carBody2D.drag, 3.0f, Time.fixedDeltaTime * 3);
