@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro.Examples;
@@ -84,5 +85,10 @@ public class NewCarScriptSO : MonoBehaviour
         carBody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
 
     }
-    
+
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Trigger");
+    }
 }
