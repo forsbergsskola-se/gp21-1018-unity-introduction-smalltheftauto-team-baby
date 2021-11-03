@@ -4,38 +4,32 @@ using UnityEngine;
 
 public class VehicleNA : MonoBehaviour{
     public GameObject playerNa;
-    public CarMovementNA carMovementNa;
+    private CarMovementNA carMovementNa;
+    private DriverNA driver;
+
+    void Start(){
+        carMovementNa = FindObjectOfType<CarMovementNA>();
+    }
 
     void Update(){
-        if (Input.GetKeyDown("Interact-Vehicle")){
-            if (PlayerIsOutsideCar()){
-                if(PlayerIsCloseToCar()){
-                EnterCar();
-                }
-            }
-            else {
-            LeaveCar();
+        if (Input.GetButton("Interact-Vehicle")){
+            if (!(driver == null)){
+                LeaveCar();
             }        
         }
     }
-    
-    bool PlayerIsOutsideCar(){
-        return this.playerNa.activeInHierarchy;
-    }
 
-    bool PlayerIsCloseToCar(){
-        return Vector3.Distance(this.playerNa.transform.position, this.transform.position) < 1;
-    }
-
-    void EnterCar(){
-        this.playerNa.SetActive(false);
+    public void EnterCar(DriverNA driver){
+        this.driver = driver;
+        driver.gameObject.SetActive(false);
         this.carMovementNa.enabled = true;
     }
 
-    void LeaveCar(){
-        this.playerNa.transform.position = this.transform.position;
-        this.playerNa.SetActive(true);
+    public void LeaveCar(){
+        this.driver.transform.position = this.transform.position;
+        this.driver.gameObject.SetActive(true);
         this.carMovementNa.enabled = false;
+        this.driver = null;
     }
 
 }
