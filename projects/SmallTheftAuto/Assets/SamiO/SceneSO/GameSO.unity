@@ -16893,15 +16893,56 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630522430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c174af9f74e12944ebac04f5d9e33dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSO: {fileID: 1650390320}
+--- !u!114 &630522432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630522430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0a5fe8b8e7e714ebf6ebd26b91a5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driftFactor: 0.95
+  accelerationForce: 50
+  turnFactor: 3.5
+  maxSpeed: 20
+--- !u!114 &630522436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630522430}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e35b0b247113e584cb8e37f977810d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5000
+  power: 3
   maxspeed: 5
-  turnpower: 3
+  turnpower: 2
   friction: 3
+--- !u!114 &630522437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630522430}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896404ff3b396c04d92b000b1fd142a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &699462025
 GameObject:
   m_ObjectHideFlags: 0
@@ -18681,7 +18722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650390320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.62, y: -0.36, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4331, y: 0.4331, z: 0.4331}
   m_Children:
   - {fileID: 11579505}
@@ -18839,7 +18880,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967231
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -19192,7 +19233,7 @@ PrefabInstance:
     - target: {fileID: 418159088202221116, guid: 2db53bc6c40ec4f4286bb47318e6f30a,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 418159088202221117, guid: 2db53bc6c40ec4f4286bb47318e6f30a,
         type: 3}
@@ -19222,7 +19263,7 @@ PrefabInstance:
     - target: {fileID: 418159088202221118, guid: 2db53bc6c40ec4f4286bb47318e6f30a,
         type: 3}
       propertyPath: m_Mass
-      value: 200
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 418159088202221119, guid: 2db53bc6c40ec4f4286bb47318e6f30a,
         type: 3}
@@ -19237,7 +19278,7 @@ PrefabInstance:
     - target: {fileID: 418159088202221119, guid: 2db53bc6c40ec4f4286bb47318e6f30a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.542
       objectReference: {fileID: 0}
     - target: {fileID: 418159088202221119, guid: 2db53bc6c40ec4f4286bb47318e6f30a,
         type: 3}
@@ -19286,4 +19327,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 418159088202221120, guid: 2db53bc6c40ec4f4286bb47318e6f30a, type: 3}
+    - {fileID: 418159088202221116, guid: 2db53bc6c40ec4f4286bb47318e6f30a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2db53bc6c40ec4f4286bb47318e6f30a, type: 3}

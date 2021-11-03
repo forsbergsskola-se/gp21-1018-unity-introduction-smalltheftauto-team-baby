@@ -33,12 +33,14 @@ public class VehicleSO : MonoBehaviour
         this.GetComponent<CarMove2SO>().enabled = true;
         
         
+        
     }
 
     void LeaveCar(){
         this.playerSO.transform.position = this.transform.position;
         this.playerSO.SetActive(true);
         this.GetComponent<CarMove2SO>().enabled = false;
+        
         
     }
 
