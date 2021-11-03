@@ -1,7 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class VehicleMT : MonoBehaviour
@@ -13,7 +12,7 @@ public class VehicleMT : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (PlayerIsOutsideCar())
             {
@@ -39,7 +38,7 @@ public class VehicleMT : MonoBehaviour
 
     void EnterCar(){
         this.playerMT.SetActive(false);
-        GetComponent<CarMovementMT>().enabled = true ;
+        this.GetComponent<CarMovementMT>().enabled = true;
     }
 
     void LeaveCar(){
