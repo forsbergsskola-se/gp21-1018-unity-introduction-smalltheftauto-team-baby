@@ -31,6 +31,12 @@ public class PlayerHealthSO : MonoBehaviour
     currentHealth -= damage;
     
     healthBar.SetHealth(currentHealth);
+
+    if (currentHealth <= 0)
+    {
+      
+    }
+    
   }
   
 }
