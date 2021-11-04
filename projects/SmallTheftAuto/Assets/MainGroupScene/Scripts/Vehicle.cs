@@ -9,7 +9,7 @@ public class Vehicle : MonoBehaviour{
     private Driver driver;
 
     void Start(){
-        carMovement = FindObjectOfType<CarMovement>();
+        carMovement = gameObject.GetComponent<CarMovement>();
     }
 
     void Update(){

@@ -9,6 +9,7 @@ public class Driver : MonoBehaviour{
             Vehicle[] cars = FindObjectsOfType<Vehicle>();
             Vehicle closestCar = null;
             float shortestDistance = 3;
+            
             foreach(Vehicle vehicle in cars){
                float carDistance = Vector3.Distance(this.transform.position, vehicle.transform.position); 
                if (carDistance < shortestDistance){
@@ -16,9 +17,11 @@ public class Driver : MonoBehaviour{
                    shortestDistance = carDistance;
                }
             }
+
             if (!(closestCar == null)){
                 closestCar.EnterCar(this);
             }
+            
         }
     }
 }
