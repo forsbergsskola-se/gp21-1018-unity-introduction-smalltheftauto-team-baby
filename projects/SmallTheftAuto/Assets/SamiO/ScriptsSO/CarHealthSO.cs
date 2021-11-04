@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CarHealthSO : MonoBehaviour
@@ -9,6 +10,7 @@ public class CarHealthSO : MonoBehaviour
     public int currentHealth;
 
     public HealthBarSO healthBar;
+    public ParticleSystem setFire;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -40,11 +42,20 @@ public class CarHealthSO : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(1);
+            
+        } 
+        if (currentHealth <= 20)
+        {
+            //Instantiate(setFire, transform.position, quaternion.identity);
+            CreatFire();
         }
-        
 
-    } 
-    
-    
+    }
+
+    void CreatFire()
+    {
+        setFire.Play();
+        
+    }
     
 }
