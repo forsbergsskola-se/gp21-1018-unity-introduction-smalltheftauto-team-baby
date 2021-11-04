@@ -11,7 +11,7 @@ public class CarMove2SO : MonoBehaviour
     public float turnpower = 2;
     public float friction = 3;
     private Vector2 curspeed;
-    Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
 
     // Use this for initialization
     void Start()
