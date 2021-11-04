@@ -44,9 +44,8 @@ public class CarHealthSO : MonoBehaviour
             TakeDamage(1);
             
         } 
-        if (currentHealth <= 20)
+        if (currentHealth <= 80)
         {
-            //Instantiate(setFire, transform.position, quaternion.identity);
             CreatFire();
         }
 
