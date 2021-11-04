@@ -8,19 +8,19 @@ public class CarMovement : MonoBehaviour{
     
     void FixedUpdate(){
         
-        if (Input.GetKey("Move-Forward")){
+        if (Input.GetButton("Interact-Forward")){
             transform.Translate(0f, moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
         }
 
-        if (Input.GetKey("Move-Backward")){
+        if (Input.GetButton("Interact-Backward")){
             transform.Translate(0f, moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
         }
 
-        if (Input.GetKey("Move-Left")){
+        if (Input.GetButton("Interact-Left")){
             transform.Rotate(0f, 0f, -turnSpeed*Time.deltaTime*Input.GetAxis("Horizontal"));
         }
 
-        if (Input.GetKey("Move-Right")){
+        if (Input.GetButton("Interact-Right")){
             transform.Rotate(0f, 0f, -turnSpeed*Time.deltaTime*Input.GetAxis("Horizontal"));
         }
     }
