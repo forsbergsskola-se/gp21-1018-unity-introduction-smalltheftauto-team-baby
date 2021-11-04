@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
+public class PlayerMovement : MonoBehaviour{
+    public float moveSpeed;
+    public int turnSpeed;
+    
+    void FixedUpdate(){
         
-    }
+        if (Input.GetKey("Move-Forward")){
+            transform.Translate(0f, moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKey("Move-Backward")){
+            transform.Translate(0f, moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
+        }
+
+        if (Input.GetKey("Move-Left")){
+            transform.Rotate(0f, 0f, -turnSpeed*Time.deltaTime*Input.GetAxis("Horizontal"));
+        }
+
+        if (Input.GetKey("Move-Right")){
+            transform.Rotate(0f, 0f, -turnSpeed*Time.deltaTime*Input.GetAxis("Horizontal"));
+        }
     }
 }
