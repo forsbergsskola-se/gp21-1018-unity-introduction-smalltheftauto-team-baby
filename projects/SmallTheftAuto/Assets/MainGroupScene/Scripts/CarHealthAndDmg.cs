@@ -44,7 +44,13 @@ public class CarHealthAndDmg : MonoBehaviour
         } 
         if (currentHealth <= 20)
         {
-            CreatFire();
+            if (!setFire.isPlaying)
+            {
+                setFire.Play();
+            }
+            {
+                
+            }
             
             Debug.Log("There is Fire");
         }
@@ -53,7 +59,8 @@ public class CarHealthAndDmg : MonoBehaviour
 
     void CreatFire()
     {
-        setFire.Play();
+        setFire.Play(); 
+        
         
     }
 }
