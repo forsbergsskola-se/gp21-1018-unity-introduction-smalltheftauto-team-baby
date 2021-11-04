@@ -47,6 +47,8 @@ public class CarHealthSO : MonoBehaviour
         if (currentHealth <= 20)
         {
             CreatFire();
+            
+            Debug.Log("There is Fire");
         }
 
     }
