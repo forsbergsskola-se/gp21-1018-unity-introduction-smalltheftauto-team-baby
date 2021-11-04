@@ -9,8 +9,18 @@ public class PlayerHealthSO : MonoBehaviour
   public int currentHealth;
 
   public HealthBarSO healthBar;
-  
-  
+
+
+  private void OnTriggerEnter2D(Collider2D other)
+  {
+    if (other.gameObject.CompareTag("Health"))
+    {
+      Healing(20);
+    } 
+    Destroy(other.gameObject);
+  }
+
+
   private void Start()
   {
     currentHealth = maxHealth;

@@ -19,6 +19,7 @@ TagManager:
   - GunFlash
   - House
   - Car
+  - Health
   layers:
   - Default
   - TransparentFX
