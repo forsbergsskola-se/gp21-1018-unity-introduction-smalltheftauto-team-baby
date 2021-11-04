@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,13 @@ public class CarHealthSO : MonoBehaviour
     public int currentHealth;
 
     public HealthBarSO healthBar;
-  
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("hit works");
+    }
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -22,19 +29,17 @@ public class CarHealthSO : MonoBehaviour
         {
             TakeDamage(1);
         }
-    }
+        
 
-
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-    
-        healthBar.SetHealth(currentHealth);
-
-        if (currentHealth <= 0)
+        void TakeDamage(int damage)
         {
-      
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
         }
-    
+
+        
+        
+        
     }
 }
