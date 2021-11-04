@@ -41,10 +41,10 @@ public class CarHealthSO : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(1);
+            TakeDamage(20);
             
         } 
-        if (currentHealth <= 80)
+        if (currentHealth <= 20)
         {
             CreatFire();
         }
