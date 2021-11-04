@@ -21,7 +21,6 @@ public class Driver : MonoBehaviour{
             if (!(closestCar == null)){
                 closestCar.EnterCar(this);
             }
-            
         }
     }
 }
