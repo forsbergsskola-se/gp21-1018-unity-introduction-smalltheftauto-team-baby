@@ -10,12 +10,6 @@ public class PlayerHealthSO : MonoBehaviour
 
   public HealthBarSO healthBar;
   
-  private void OnTriggerEnter2D(Collider2D other)
-  {
-    Debug.Log("hit works");
-  } 
-  
-  
   
   private void Start()
   {
