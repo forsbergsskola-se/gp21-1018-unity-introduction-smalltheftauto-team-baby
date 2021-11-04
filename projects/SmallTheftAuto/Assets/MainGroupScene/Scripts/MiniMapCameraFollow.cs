@@ -1,19 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class MiniMapCameraFollow : MonoBehaviour
 {
-    
-
-    public Transform player;
-
-    private void LateUpdate()
+    public Transform Player;
+    public Vector3 offset;
+    void Start()
     {
-        Vector3 newPostion = player.position;
-        newPostion.z = transform.position.z;
-        transform.position = newPostion;
+        transform.position = Player.position + offset;
 
+        Vector3 rot = new Vector3(90, Player.eulerAngles.y, 0);
+        
+        transform.rotation = Quaternion.Euler(rot); 
     }
+
+    
 }
