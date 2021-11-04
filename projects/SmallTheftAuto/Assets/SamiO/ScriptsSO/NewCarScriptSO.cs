@@ -86,9 +86,5 @@ public class NewCarScriptSO : MonoBehaviour
 
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        Debug.Log("Trigger");
-    }
+    
 }
