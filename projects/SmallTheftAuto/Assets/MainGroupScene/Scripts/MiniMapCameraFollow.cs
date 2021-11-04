@@ -4,15 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MiniMapCameraFollow : MonoBehaviour
 {
-    public Transform Player;
-    public Vector3 offset;
-    void Start()
-    {
-        transform.position = Player.position + offset;
+    // public Transform Player;
+    // public Vector3 offset;
+    // void Start()
+    // {
+    //     transform.position = Player.position + offset;
+    //
+    //     Vector3 rot = new Vector3(90, 0, Player.eulerAngles.z);
+    //     
+    //     transform.rotation = Quaternion.Euler(rot); 
+    // }
+    
+    public float moveSpeed;
+    public GameObject targetPlayer;
+    public GameObject targetCar;
+    private Transform rigTransform; 
 
-        Vector3 rot = new Vector3(90, Player.eulerAngles.y, 0);
+    void Start(){
         
-        transform.rotation = Quaternion.Euler(rot); 
+        rigTransform = this.transform.parent;
+    }
+
+    void FixedUpdate (){
+        if(targetPlayer == null){
+            return;
+        }
+        if(targetPlayer.activeInHierarchy){
+            rigTransform.position = Vector3.Lerp(rigTransform.position, targetPlayer.transform.position, 
+                Time.deltaTime * moveSpeed);
+        }
+        else{
+            rigTransform.position = Vector3.Lerp(rigTransform.position, targetCar.transform.position, 
+                Time.deltaTime * moveSpeed);
+        }
     }
 
     
