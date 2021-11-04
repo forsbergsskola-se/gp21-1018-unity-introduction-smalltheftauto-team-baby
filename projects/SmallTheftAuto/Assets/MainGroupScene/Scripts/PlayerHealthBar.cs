@@ -7,6 +7,7 @@ public class PlayerHealthBar : MonoBehaviour
 {
 
     public Slider slider;
+    
 
     public void SetMaxHealth(int health)
     {
