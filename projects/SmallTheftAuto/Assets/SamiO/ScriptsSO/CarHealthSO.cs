@@ -1,40 +1,60 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CarHealthSO : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 100;
     public int currentHealth;
 
     public HealthBarSO healthBar;
-  
+    public ParticleSystem setFire;
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+
+        if (other.collider.gameObject.CompareTag("House"))
+        {
+            TakeDamage(20);
+        }
+        
+        Debug.Log("hit works");
+    }
+ 
+
     private void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
-    }
-
-
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-    
-        healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
-        {
-      
-        }
-    
+        healthBar.SetHealth(currentHealth);
     }
+
+    private void Update()
+    {
+       
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(1);
+            
+        } 
+        if (currentHealth <= 80)
+        {
+            CreatFire();
+        }
+
+    }
+
+    void CreatFire()
+    {
+        setFire.Play();
+        
+    }
+    
 }

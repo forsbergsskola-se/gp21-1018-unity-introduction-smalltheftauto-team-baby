@@ -10,6 +10,7 @@ public class PlayerHealthSO : MonoBehaviour
 
   public HealthBarSO healthBar;
   
+  
   private void Start()
   {
     currentHealth = maxHealth;
@@ -19,10 +20,16 @@ public class PlayerHealthSO : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space))
+    if (Input.GetKeyDown(KeyCode.E))
     {
       TakeDamage(20);
     }
+    
+    if (Input.GetKeyDown(KeyCode.T))
+    {
+      Healing(20);
+    }
+    
   }
 
 
@@ -36,7 +43,13 @@ public class PlayerHealthSO : MonoBehaviour
     {
       
     }
-    
+  }
+
+ public void Healing(int healAmount)
+  {
+    currentHealth += healAmount;
+    healthBar.SetHealth(currentHealth);
+
   }
   
 }

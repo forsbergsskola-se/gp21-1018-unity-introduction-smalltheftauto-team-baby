@@ -17,6 +17,8 @@ TagManager:
   - SmokeTrail
   - Spawner
   - GunFlash
+  - House
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - Water
   - UI
   - Minmap
-  - 
+  - Car
   - Enemy
   - 
   - 
