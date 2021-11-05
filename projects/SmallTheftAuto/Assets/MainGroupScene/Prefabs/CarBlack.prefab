@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1476560617457821322}
   - component: {fileID: 1476560617457821364}
   - component: {fileID: 1476560617457821323}
+  - component: {fileID: 5051669283341916515}
   - component: {fileID: 4924932125102440051}
   - component: {fileID: 6013522939537028081}
   - component: {fileID: 3844404049617080436}
@@ -195,6 +196,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5051669283341916515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476560617457821327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a906a3538f5a34baaf0c2d9c9b6c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  setFire: {fileID: 114400928114155919, guid: eb3a6c6deb4375d42a6639fc3b85cc68, type: 3}
 --- !u!95 &4924932125102440051
 Animator:
   serializedVersion: 3
@@ -278,7 +293,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91873b4853698524cbcd978f3a2dcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 100
-  healthBar: {fileID: 0}
-  setFire: {fileID: 0}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3186461889921038088}
   - component: {fileID: 8231483728924940374}
   - component: {fileID: 4331123412811248951}
+  - component: {fileID: 2803227754980517727}
   - component: {fileID: 6919124508674467690}
   - component: {fileID: 409031260244288012}
   m_Layer: 0
@@ -76,10 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91873b4853698524cbcd978f3a2dcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 100
-  healthBar: {fileID: 0}
-  setFire: {fileID: 0}
 --- !u!61 &4331123412811248951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,8 +102,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2678341, y: 4487671}
+  m_Size: {x: 0.2678341, y: 0.4487671}
   m_EdgeRadius: 0
+--- !u!114 &2803227754980517727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654696141925575423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a906a3538f5a34baaf0c2d9c9b6c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  setFire: {fileID: 114400928114155919, guid: eb3a6c6deb4375d42a6639fc3b85cc68, type: 3}
 --- !u!50 &6919124508674467690
 Rigidbody2D:
   serializedVersion: 4

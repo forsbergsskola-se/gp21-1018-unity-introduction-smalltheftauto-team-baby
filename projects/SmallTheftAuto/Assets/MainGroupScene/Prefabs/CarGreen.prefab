@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2725439378324483040}
   - component: {fileID: 8527558953722833200}
   - component: {fileID: 5593002291012017355}
+  - component: {fileID: 5060533379427767065}
   - component: {fileID: 1613568580354733958}
   - component: {fileID: 2002007406136662358}
   - component: {fileID: 5353678653729354454}
@@ -159,10 +160,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91873b4853698524cbcd978f3a2dcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 100
-  healthBar: {fileID: 0}
-  setFire: {fileID: 0}
+--- !u!114 &5060533379427767065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663100626403201311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a906a3538f5a34baaf0c2d9c9b6c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  setFire: {fileID: 114400928114155919, guid: eb3a6c6deb4375d42a6639fc3b85cc68, type: 3}
 --- !u!61 &1613568580354733958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +199,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2678341, y: 4487671}
+  m_Size: {x: 0.2678341, y: 0.4487671}
   m_EdgeRadius: 0
 --- !u!50 &2002007406136662358
 Rigidbody2D:
