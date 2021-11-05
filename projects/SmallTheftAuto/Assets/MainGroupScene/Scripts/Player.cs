@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public List<string> inventory;
-    public GameObject floatingTextPrefab;
+
+    public GameObject FloatingTextWASTEDPrefab;
     public int maxHealth = 100;
     public int currentHealth;
     public int money = 0;
@@ -22,24 +22,13 @@ public class Player : MonoBehaviour
     }
 
    
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Health"))
+        if (other.gameObject.CompareTag("Health"))
         {
             Healing(20);
         } 
-        Destroy(collision.gameObject); 
-       
-        if (collision.CompareTag("Collectable"))
-        {
-            string itemType = collision.gameObject.GetComponent<CollectItem>().itemType;
-            print("You picked up a:" + itemType);
-            
-            inventory.Add(itemType);
-            Destroy(collision.gameObject);
-            
-            
-        }
+        Destroy(other.gameObject);
     }
 
     private void Update()
@@ -82,7 +71,7 @@ public class Player : MonoBehaviour
     private void PlayerDeath(){
         //WASTED UI
 
-        if (floatingTextPrefab != null)
+        if (FloatingTextWASTEDPrefab != null)
         {
             ShowFloatingText();
         }
@@ -92,9 +81,8 @@ public class Player : MonoBehaviour
 
     void ShowFloatingText()
     {
-        Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
+        Instantiate(FloatingTextWASTEDPrefab, transform.position, Quaternion.identity, transform);
     }
 
-    
     
 }

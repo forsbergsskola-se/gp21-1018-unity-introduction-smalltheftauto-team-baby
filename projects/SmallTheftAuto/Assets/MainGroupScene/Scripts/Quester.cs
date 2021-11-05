@@ -5,8 +5,10 @@ using UnityEngine;
 public class Quester : MonoBehaviour{
 
     public Quest quest;
+     
     void Update(){
-        if (Input.GetButton("Interact-Phonebooth")){
+        if (Input.GetButton("Interact-Phonebooth"))
+        {
             PhoneBox[] phones = FindObjectsOfType<PhoneBox>();
             PhoneBox closestPhone = null;
             float shortestDistance = 2;
@@ -25,6 +27,11 @@ public class Quester : MonoBehaviour{
                     closestPhone.HandInQuest(this);
                 }
             }
+
+            
         }
     }
+
+    
+
 }

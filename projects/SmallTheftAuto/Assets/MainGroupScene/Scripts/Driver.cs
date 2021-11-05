@@ -11,7 +11,7 @@ public class Driver : MonoBehaviour{
             float shortestDistance = 3;
             
             foreach(Vehicle vehicle in cars){
-               float carDistance = Vector3.Distance(this.transform.position, vehicle.transform.position); 
+               float carDistance = Vector3.Distance(this.gameObject.transform.position, vehicle.gameObject.transform.position); 
                if (carDistance < shortestDistance){
                    closestCar = vehicle;
                    shortestDistance = carDistance;

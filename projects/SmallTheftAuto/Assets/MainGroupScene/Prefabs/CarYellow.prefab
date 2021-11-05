@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6200644688108845742}
   - component: {fileID: 4571686959685375568}
   - component: {fileID: 6200621960065019447}
+  - component: {fileID: 8436600811824157276}
   - component: {fileID: 3765109133391900032}
   - component: {fileID: 5373603896751384565}
   - component: {fileID: 3685593358885190504}
@@ -113,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5901081133280598234}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -38.58, y: 2.38, z: -3.8384457}
+  m_LocalPosition: {x: -38.58, y: 2.38, z: -1}
   m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 1215971594196123248}
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5901081133280598234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4c7f04b2d04cd743b9e832d09d015a3, type: 3}
   m_Name: 
@@ -159,10 +160,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91873b4853698524cbcd978f3a2dcb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 100
-  healthBar: {fileID: 0}
-  setFire: {fileID: 0}
+--- !u!114 &8436600811824157276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901081133280598234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a906a3538f5a34baaf0c2d9c9b6c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  setFire: {fileID: 114400928114155919, guid: eb3a6c6deb4375d42a6639fc3b85cc68, type: 3}
 --- !u!61 &3765109133391900032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +199,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2678341, y: 4487671}
+  m_Size: {x: 0.2678341, y: 0.4487671}
   m_EdgeRadius: 0
 --- !u!50 &5373603896751384565
 Rigidbody2D:
