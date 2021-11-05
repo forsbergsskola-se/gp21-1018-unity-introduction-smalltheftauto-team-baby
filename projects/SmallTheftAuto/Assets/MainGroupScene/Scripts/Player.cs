@@ -7,7 +7,12 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int money = 0;
+    public int score = 0 ;
+
+    public GameObject savePoint;
     public PlayerHealthBar healthBar;
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -24,7 +29,7 @@ public class Player : MonoBehaviour
         Destroy(other.gameObject);
     }
 
-private void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -38,7 +43,6 @@ private void Update()
     
    }
 
-
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -47,7 +51,7 @@ private void Update()
 
         if (currentHealth <= 0)
         {
-      
+            PlayerDeath();
         }
     }
 
@@ -56,5 +60,10 @@ private void Update()
         currentHealth += healAmount;
         healthBar.SetHealth(currentHealth);
 
+    }
+
+    private void PlayerDeath(){
+        //WASTED UI
+        money = money / 2;
     }
 }
