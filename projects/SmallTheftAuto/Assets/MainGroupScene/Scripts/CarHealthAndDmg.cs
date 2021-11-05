@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CarHealthAndDmg : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-
-    public Animator animator;
 
     public HealthBarSO healthBar;
     public ParticleSystem setFire;
@@ -30,10 +27,17 @@ public class CarHealthAndDmg : MonoBehaviour
         
     }
  
+
     private void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+    }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 
     private void Update()
@@ -56,27 +60,19 @@ public class CarHealthAndDmg : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                CarDeath();
+                //CarDeath();
             }
             
             Debug.Log("There is Fire");
         }
 
-    }
-
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
-    }
-
+    } 
+    
     private void CarDeath() { //Please make this run when car dies
-        Quester quester = gameObject.FindObjectsOfType<Quester>()[0];
+        Quester quester = FindObjectsOfType<Quester>()[0];
         if (!(quester.quest == null)){
             quester.quest.carDead = true;
         }
-        animator.SetBool("Explode", true);        
     }
 
     void CreatFire()

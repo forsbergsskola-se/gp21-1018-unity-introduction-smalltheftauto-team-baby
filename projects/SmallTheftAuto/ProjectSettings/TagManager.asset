@@ -21,6 +21,7 @@ TagManager:
   - Car
   - Health
   - Bullet
+  - Collectable
   layers:
   - Default
   - TransparentFX
