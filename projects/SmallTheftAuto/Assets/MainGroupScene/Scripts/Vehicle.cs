@@ -7,6 +7,7 @@ public class Vehicle : MonoBehaviour{
     public GameObject player;
     private CarMovement carMovement;
     private Driver driver;
+    public CameraFollow camera;
 
     void Start(){
         carMovement = gameObject.GetComponent<CarMovement>();
@@ -30,6 +31,8 @@ public class Vehicle : MonoBehaviour{
         this.driver.transform.position = this.transform.position;
         this.driver.gameObject.SetActive(true);
         this.carMovement.enabled = false;
+        camera.targetPlayer = driver.gameObject;
+        this.driver.camera = camera;
         this.driver = null;
     }
 }
