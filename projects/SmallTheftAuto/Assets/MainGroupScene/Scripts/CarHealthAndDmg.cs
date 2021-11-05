@@ -60,7 +60,7 @@ public class CarHealthAndDmg : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                CarDeath();
+                //CarDeath();
             }
             
             Debug.Log("There is Fire");
@@ -71,7 +71,7 @@ public class CarHealthAndDmg : MonoBehaviour
     private void CarDeath() { //Please make this run when car dies
         Quester quester = gameObject.FindObjectsOfType<Quester>()[0];
         if (!(quester.quest == null)){
-            quester.quest.carDead = true;
+           // quester.quest.carDead = true;
         }
     }
 

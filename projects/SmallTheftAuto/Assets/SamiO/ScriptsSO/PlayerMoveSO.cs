@@ -7,12 +7,12 @@ using UnityEngine.EventSystems;
 
 public class PlayerMoveSO : MonoBehaviour
 {
-    public List<string> items;
+    public List<string> inventory;
 
 
     private void Start()
     {
-        items = new List<string>();
+        inventory = new List<string>();
         
     }
 
@@ -47,7 +47,12 @@ public class PlayerMoveSO : MonoBehaviour
     {
         if (collision.CompareTag("Collectable"))
         {
+            string itemType = collision.gameObject.GetComponent<CollectItemsSO>().itemType;
+            print("You picked up a:" + itemType);
+            
+            inventory.Add(itemType);
             Destroy(collision.gameObject);
+            
             
         }
     }
