@@ -57,15 +57,6 @@ public class CarHealthAndDmg : MonoBehaviour
             Debug.Log("There is Fire");
         }
 
-        /*
-        if (//Cardeath or something)){
-            animator.SetBool("Explode", true);
-        }
-        else {
-            animator.SetBool("Explode", false);
-        }
-        */
-
     }
 
     void TakeDamage(int damage)
@@ -79,7 +70,8 @@ public class CarHealthAndDmg : MonoBehaviour
         Quester quester = gameObject.FindObjectsOfType<Quester>()[0];
         if (!(quester.quest == null)){
             quester.quest.carDead = true;
-        }        
+        }
+        animator.SetBool("Explode", true);        
     }
 
     void CreatFire()
