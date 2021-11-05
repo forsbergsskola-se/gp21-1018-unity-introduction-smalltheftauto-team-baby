@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+       // healthBar.SetMaxHealth(maxHealth);
     }
 
    
@@ -67,18 +67,18 @@ public class Player : MonoBehaviour
     private void PlayerDeath(){
         //WASTED UI
 
-        if (FloatingTextPrefab)
+       // if (FloatingTextPrefab)
         {
-            ShowFloatingText();
+       //     ShowFloatingText();
         }
         
         money = money / 2;
     }
 
-    void ShowFloatingText()
-    {
-        Instantiate(FloatingTextPrefab.transform.position );
-    }
+   // void ShowFloatingText()
+    //{
+       // Instantiate(FloatingTextPrefab.transform.position );
+    //}
 
     
 }
