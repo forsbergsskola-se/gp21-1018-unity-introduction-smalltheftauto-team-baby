@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PhoneBox : MonoBehaviour{
-    void Start(){
-        
+    public Quest StartQuest(){
+        //UI accept quest, telling you you're on a quest
+        Quest carHater = new Quest();
+        return carHater;
     }
 
-    void Update(){
-        
-    }
-
-    public void StartQuest(){
-
+    public void HandInQuest(Quester quester){
+        //UI "You're great, killed car!"
+        //Get reward!
+        quester.quest = null;
     }
 }
 
-public class Quests{
-    
+public class Quest{
+    public bool carDead = false;
+    int reward = 0; //Money???
 }
