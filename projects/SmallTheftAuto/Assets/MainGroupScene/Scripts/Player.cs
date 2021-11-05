@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public List<string> inventory;
     public GameObject floatingTextPrefab;
     public int maxHealth = 100;
     public int currentHealth;
@@ -22,13 +22,24 @@ public class Player : MonoBehaviour
     }
 
    
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Health"))
+        if (collision.gameObject.CompareTag("Health"))
         {
             Healing(20);
         } 
-        Destroy(other.gameObject);
+        Destroy(collision.gameObject); 
+       
+        if (collision.CompareTag("Collectable"))
+        {
+            string itemType = collision.gameObject.GetComponent<CollectItem>().itemType;
+            print("You picked up a:" + itemType);
+            
+            inventory.Add(itemType);
+            Destroy(collision.gameObject);
+            
+            
+        }
     }
 
     private void Update()
@@ -84,5 +95,6 @@ public class Player : MonoBehaviour
         Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
     }
 
+    
     
 }
