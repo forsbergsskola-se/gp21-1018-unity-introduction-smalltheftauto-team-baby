@@ -77,8 +77,8 @@ public class Player : MonoBehaviour
 
     void ShowFloatingText()
     {
-        Instantiate(FloatingTextPrefab.transform.position );
+        Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform  );
     }
 
-    
+  
 }
