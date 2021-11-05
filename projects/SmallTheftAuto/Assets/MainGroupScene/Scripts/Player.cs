@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public int money = 0;
     public PlayerHealthBar healthBar;
     void Start()
     {
