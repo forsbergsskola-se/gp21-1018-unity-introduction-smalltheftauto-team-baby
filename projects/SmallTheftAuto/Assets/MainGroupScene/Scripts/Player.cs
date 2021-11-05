@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     public int currentHealth;
     public int money = 0;
     public int score = 0 ;
-
     public GameObject savePoint;
     public PlayerHealthBar healthBar;
+    public GameObject deathText;
 
 
     void Start()
@@ -69,7 +69,6 @@ public class Player : MonoBehaviour
     }
 
     private void PlayerDeath(){
-        //WASTED UI
 
         if (FloatingTextWASTEDPrefab != null)
         {
@@ -77,11 +76,19 @@ public class Player : MonoBehaviour
         }
         
         money = money / 2;
+        currentHealth = maxHealth;
+        transform.position = savePoint.transform.position;
+        healthBar.SetMaxHealth(currentHealth);
+
+        if (Input.GetButton("Interact-Forward") || Input.GetButton("Interact-Backward")){
+            Destroy(deathText);
+        }
+
     }
 
     void ShowFloatingText()
     {
-        Instantiate(FloatingTextWASTEDPrefab, transform.position, Quaternion.identity, transform);
+        deathText = Instantiate(FloatingTextWASTEDPrefab, transform.position, Quaternion.identity, transform);
     }
 
     
