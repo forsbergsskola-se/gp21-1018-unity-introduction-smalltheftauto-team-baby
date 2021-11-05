@@ -17,7 +17,7 @@ public class UIMoney : MonoBehaviour
     {
         instance = this;
         
-        //UIMoney.Instance.AddMoney();
+        //UIMoney.instance.AddMoney();
         //  ^ call this to update ui when u pick up money
     }
 
@@ -29,7 +29,7 @@ public class UIMoney : MonoBehaviour
     
     public void AddMoney()
     {
-        money += 1;
+        money += 20;
         moneyText.text = money.ToString() + " $";
     }
 }
