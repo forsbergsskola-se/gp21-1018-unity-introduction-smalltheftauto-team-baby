@@ -28,7 +28,10 @@ public class Player : MonoBehaviour
         {
             Healing(20);
         } 
-        Destroy(other.gameObject);
+        Destroy(other.gameObject); 
+        
+        UIMoney.instance.AddMoney();
+        ScoreManager.instance.AddPoint();
     }
 
     private void Update()

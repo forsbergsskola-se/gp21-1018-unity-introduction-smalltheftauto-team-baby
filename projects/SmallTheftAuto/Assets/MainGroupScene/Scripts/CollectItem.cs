@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class CollectItem : MonoBehaviour
 {
-    public string itemType;
+    public string itemType; 
+    
+    
+    
 }

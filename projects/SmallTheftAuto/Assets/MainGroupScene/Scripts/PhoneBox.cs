@@ -6,19 +6,9 @@ public class PhoneBox : MonoBehaviour{
     
     public GameObject FloatingTextQuestAcceptedPrefab; 
     public Quest StartQuest(){
-        //UI accept quest, telling you you're on a quest
         Quest carHater = new Quest();
-        
-        if (FloatingTextQuestAcceptedPrefab != null)
-        {
-            ShowFloatingText();
-        }
+        Debug.Log("carHater");
         return carHater;
-    }
-    
-    void ShowFloatingText()
-    {
-        Instantiate(FloatingTextQuestAcceptedPrefab, transform.position, Quaternion.identity, transform);
     }
 
     public void HandInQuest(Quester quester){
