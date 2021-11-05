@@ -53,6 +53,11 @@ public class CarHealthAndDmg : MonoBehaviour
             {
                 
             }
+
+            if (currentHealth <= 0)
+            {
+                CarDeath();
+            }
             
             Debug.Log("There is Fire");
         }
