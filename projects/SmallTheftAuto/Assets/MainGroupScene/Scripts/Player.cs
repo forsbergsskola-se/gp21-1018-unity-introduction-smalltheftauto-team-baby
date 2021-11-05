@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public GameObject FloatingTextPrefab;
     public int maxHealth = 100;
     public int currentHealth;
     public int money = 0;
@@ -64,6 +66,19 @@ public class Player : MonoBehaviour
 
     private void PlayerDeath(){
         //WASTED UI
+
+        if (FloatingTextPrefab)
+        {
+            ShowFloatingText();
+        }
+        
         money = money / 2;
     }
+
+    void ShowFloatingText()
+    {
+        Instantiate(FloatingTextPrefab.transform.position );
+    }
+
+    
 }
