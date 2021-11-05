@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CarHealthAndDmg : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public Animator animator;
 
     public HealthBarSO healthBar;
     public ParticleSystem setFire;
@@ -70,3 +72,12 @@ public class CarHealthAndDmg : MonoBehaviour
         
     }
 }
+
+/*
+        if (//Cardeath or something)){
+            animator.SetBool("Explode", true);
+        }
+        else {
+            animator.SetBool("Explode", false);
+        }
+*/
