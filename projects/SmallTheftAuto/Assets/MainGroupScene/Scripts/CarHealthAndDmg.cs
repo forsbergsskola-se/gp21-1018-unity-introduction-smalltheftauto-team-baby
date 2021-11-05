@@ -63,6 +63,15 @@ public class CarHealthAndDmg : MonoBehaviour
             Debug.Log("There is Fire");
         }
 
+        /*
+        if (//Cardeath or something)){
+            animator.SetBool("Explode", true);
+        }
+        else {
+            animator.SetBool("Explode", false);
+        }
+        */
+
     }
 
     void CreatFire()
@@ -72,12 +81,3 @@ public class CarHealthAndDmg : MonoBehaviour
         
     }
 }
-
-/*
-        if (//Cardeath or something)){
-            animator.SetBool("Explode", true);
-        }
-        else {
-            animator.SetBool("Explode", false);
-        }
-*/
