@@ -22889,6 +22889,7 @@ GameObject:
   - component: {fileID: 1633492194}
   - component: {fileID: 1633492193}
   - component: {fileID: 1633492192}
+  - component: {fileID: 1633492195}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Collectable
@@ -22978,6 +22979,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1633492195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633492191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75548ff3b051184fa5e5fa58fd77b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1650390320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1882799416034664596, guid: 7bf565828be681e4cba816b4d9743925,

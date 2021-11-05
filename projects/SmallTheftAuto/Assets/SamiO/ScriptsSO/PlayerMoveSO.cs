@@ -7,8 +7,15 @@ using UnityEngine.EventSystems;
 
 public class PlayerMoveSO : MonoBehaviour
 {
-    
-    
+    public List<string> items;
+
+
+    private void Start()
+    {
+        items = new List<string>();
+        
+    }
+
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))
