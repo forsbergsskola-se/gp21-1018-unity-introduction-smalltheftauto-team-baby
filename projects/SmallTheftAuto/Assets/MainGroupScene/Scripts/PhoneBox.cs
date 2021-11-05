@@ -8,12 +8,12 @@ public class PhoneBox : MonoBehaviour{
     public Quest StartQuest(){
         //UI accept quest, telling you you're on a quest
         Quest carHater = new Quest();
-        return carHater;
         
         if (FloatingTextQuestAcceptedPrefab != null)
         {
             ShowFloatingText();
         }
+        return carHater;
     }
     
     void ShowFloatingText()
@@ -30,5 +30,5 @@ public class PhoneBox : MonoBehaviour{
 
 public class Quest{
     public bool carDead = false;
-    int reward = 0; //Money???
+    public int reward = 0; //Money???
 }
