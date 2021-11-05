@@ -13,6 +13,7 @@ public class PhoneBox : MonoBehaviour{
         //UI "You're great, killed car!"
         //Get reward!
         quester.quest = null;
+        carDead = false;
     }
 }
 
