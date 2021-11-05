@@ -11,13 +11,12 @@ public class PhoneBox : MonoBehaviour{
 
     public void HandInQuest(Quester quester){
         //UI "You're great, killed car!"
-        (quester.gameObject.GetComponent<Player>()).money += quester.quest.reward;
+        //Get reward!
         quester.quest = null;
-        carDead = false;
     }
 }
 
 public class Quest{
     public bool carDead = false;
-    int reward = 100;
+    int reward = 0; //Money???
 }
