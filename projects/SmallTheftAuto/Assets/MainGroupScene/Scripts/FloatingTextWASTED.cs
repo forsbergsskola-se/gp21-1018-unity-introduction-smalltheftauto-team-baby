@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloatingTextWASTED : MonoBehaviour
 {
 
-    public float DestroyTime = 3f;
+    public float DestroyTime = 3f;    
     
     void Start()
     {
