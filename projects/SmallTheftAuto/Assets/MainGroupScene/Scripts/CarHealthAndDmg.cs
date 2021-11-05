@@ -66,6 +66,13 @@ public class CarHealthAndDmg : MonoBehaviour
             Debug.Log("There is Fire");
         }
 
+    } 
+    
+    private void CarDeath() { //Please make this run when car dies
+        Quester quester = gameObject.FindObjectsOfType<Quester>()[0];
+        if (!(quester.quest == null)){
+            quester.quest.carDead = true;
+        }
     }
 
     void CreatFire()

@@ -7,8 +7,15 @@ using UnityEngine.EventSystems;
 
 public class PlayerMoveSO : MonoBehaviour
 {
-    
-    
+    public List<string> items;
+
+
+    private void Start()
+    {
+        items = new List<string>();
+        
+    }
+
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))
@@ -34,5 +41,14 @@ public class PlayerMoveSO : MonoBehaviour
         } 
         
        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Collectable"))
+        {
+            Destroy(collision.gameObject);
+            
+        }
     }
 }
