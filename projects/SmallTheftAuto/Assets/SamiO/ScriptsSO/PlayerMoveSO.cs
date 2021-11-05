@@ -35,4 +35,13 @@ public class PlayerMoveSO : MonoBehaviour
         
        
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Collectable"))
+        {
+            Destroy(collision.gameObject);
+            
+        }
+    }
 }
