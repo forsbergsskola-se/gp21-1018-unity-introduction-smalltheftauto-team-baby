@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.Examples;
 using UnityEngine;
 
 public class NewCarScriptSO : MonoBehaviour
 {
+    
     public float driftFactor = 0.95f;
     public float accelerationForce = 30.0f;
     public float turnFactor = 3.5f;
@@ -85,6 +84,4 @@ public class NewCarScriptSO : MonoBehaviour
         carBody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
 
     }
-
-    
 }

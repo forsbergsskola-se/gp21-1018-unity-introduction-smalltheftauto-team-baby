@@ -5,6 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour{
     public float moveSpeed;
     public int turnSpeed;
+    public Animator animator;
+
+    
+
+    void Update(){
+        if (Input.GetButton("Interact-Forward") || Input.GetButton("Interact-Backward")){
+            animator.SetBool("Walk", true);
+        }
+        else {
+            animator.SetBool("Walk", false);
+        }
+    }
     
     void FixedUpdate(){
         
