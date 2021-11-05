@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CarHealthAndDmg : MonoBehaviour
 {
-    public int maxHealth = 100;
+    private int maxHealth = 100;
     public int currentHealth;
 
-    public HealthBarSO healthBar;
-    public ParticleSystem setFire;
+   // public HealthBarSO healthBar;
+    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -37,7 +37,7 @@ public class CarHealthAndDmg : MonoBehaviour
     {
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
     }
 
     private void Update()
@@ -50,14 +50,7 @@ public class CarHealthAndDmg : MonoBehaviour
         } 
         if (currentHealth <= 20)
         {
-            if (!setFire.isPlaying)
-            {
-                setFire.Play();
-            }
-            {
-                
-            }
-
+           
             if (currentHealth <= 0)
             {
                 CarDeath();
@@ -75,10 +68,5 @@ public class CarHealthAndDmg : MonoBehaviour
         }
     }
 
-    void CreatFire()
-    {
-        setFire.Play(); 
-        
-        
-    }
+  
 }

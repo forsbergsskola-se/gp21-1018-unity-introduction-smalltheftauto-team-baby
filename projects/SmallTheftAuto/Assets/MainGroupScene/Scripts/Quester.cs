@@ -5,8 +5,10 @@ using UnityEngine;
 public class Quester : MonoBehaviour{
 
     public Quest quest;
+    public GameObject FloatingTextQuestAcceptedPrefab; 
     void Update(){
-        if (Input.GetButton("Interact-Phonebooth")){
+        if (Input.GetButton("Interact-Phonebooth"))
+        {
             PhoneBox[] phones = FindObjectsOfType<PhoneBox>();
             PhoneBox closestPhone = null;
             float shortestDistance = 2;
@@ -25,6 +27,17 @@ public class Quester : MonoBehaviour{
                     closestPhone.HandInQuest(this);
                 }
             }
+
+            if (FloatingTextQuestAcceptedPrefab != null)
+            {
+                ShowFloatingText();
+            }
         }
     }
+
+    void ShowFloatingText()
+    {
+        Instantiate(FloatingTextQuestAcceptedPrefab, transform.position, Quaternion.identity, transform);
+    }
+
 }

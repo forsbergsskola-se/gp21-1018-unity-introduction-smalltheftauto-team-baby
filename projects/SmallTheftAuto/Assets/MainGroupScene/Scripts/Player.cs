@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public GameObject FloatingTextPrefab;
+    public GameObject FloatingTextWASTEDPrefab;
     public int maxHealth = 100;
     public int currentHealth;
     public int money = 0;
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-       // healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
    
@@ -55,7 +55,11 @@ public class Player : MonoBehaviour
         {
             PlayerDeath();
         }
+        
+        
     }
+    
+    
 
     public void Healing(int healAmount)
     {
@@ -67,18 +71,18 @@ public class Player : MonoBehaviour
     private void PlayerDeath(){
         //WASTED UI
 
-       // if (FloatingTextPrefab)
+        if (FloatingTextWASTEDPrefab != null)
         {
-       //     ShowFloatingText();
+            ShowFloatingText();
         }
         
         money = money / 2;
     }
 
-   // void ShowFloatingText()
-    //{
-       // Instantiate(FloatingTextPrefab.transform.position );
-    //}
+    void ShowFloatingText()
+    {
+        Instantiate(FloatingTextWASTEDPrefab, transform.position, Quaternion.identity, transform);
+    }
 
     
 }
