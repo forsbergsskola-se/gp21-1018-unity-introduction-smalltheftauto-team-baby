@@ -6,44 +6,31 @@ using UnityEngine;
 public class VehicleMT : MonoBehaviour
 {
     public GameObject playerMT;
-    //public CarMovementMT carMovement;
-    
+    private CarMovement carMovement;
+    private Driver driver;
 
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (PlayerIsOutsideCar())
-            {
-                if (PlayerIsCloseToCar())
-                {
-                    EnterCar();
-                }
-            }
-            else
-            {
+    void Start(){
+        carMovement = gameObject.GetComponent<CarMovement>();
+    }
+
+    void Update(){
+        if (Input.GetButton("Interact-Vehicle")){
+            if (!(driver == null)){
                 LeaveCar();
-            }
+            }        
         }
     }
 
-    bool PlayerIsOutsideCar(){
-        return this.playerMT.activeInHierarchy;
+    public void EnterCar(Driver driver){
+        this.driver = driver;
+        driver.gameObject.SetActive(false);
+        this.carMovement.enabled = true;
     }
 
-    bool PlayerIsCloseToCar(){
-        return Vector3.Distance(this.playerMT.transform.position, this.transform.position) < 1;
-    }
-
-    void EnterCar(){
-        this.playerMT.SetActive(false);
-        this.GetComponent<CarMovementMT>().enabled = true;
-    }
-
-    void LeaveCar(){
-        this.playerMT.transform.position = this.transform.position;
-        this.playerMT.SetActive(true);
-        GetComponent<CarMovementMT>().enabled = false ;
+    public void LeaveCar(){
+        this.driver.transform.position = this.transform.position;
+        this.driver.gameObject.SetActive(true);
+        this.carMovement.enabled = false;
+        this.driver = null;
     }
 }

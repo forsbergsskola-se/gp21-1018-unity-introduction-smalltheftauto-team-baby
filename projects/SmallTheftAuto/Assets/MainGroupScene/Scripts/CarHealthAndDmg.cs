@@ -69,7 +69,7 @@ public class CarHealthAndDmg : MonoBehaviour
     } 
     
     private void CarDeath() { //Please make this run when car dies
-        Quester quester = gameObject.FindObjectsOfType<Quester>()[0];
+        Quester quester = FindObjectsOfType<Quester>()[0];
         if (!(quester.quest == null)){
            // quester.quest.carDead = true;
         }
