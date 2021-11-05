@@ -67,7 +67,9 @@ public class ShottingSO : MonoBehaviour
     
     if(bulletShot > 0 && bulletsLeft > 0)
     Invoke("Shoot", timeBetweenShots);
-  }
+  } 
+  
+  
 
   private void ResetShot()
   {
@@ -91,19 +93,3 @@ public class ShottingSO : MonoBehaviour
   }
   
 }
-
-
-//GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-//Rigidbody rb = bullet.GetComponent(<Rigidbody>();
-
-
-
-//RaycastHit hit;
-//if (Physics.Raycast(firePoint.transform.position, firePoint.transform.up, out hit, range))
-//
- // Debug.Log(rayHit.collider.name);
-
-  //if (rayHit.collider.CompareTag("Enemy"))
-    //Change PlayerHealthSO to work in main
-   // rayHit.collider.GetComponent<PlayerHealthSO>().TakeDamage(damage);
-//}

@@ -18,9 +18,15 @@ public class CarHealthSO : MonoBehaviour
         if (other.collider.gameObject.CompareTag("House"))
         {
             TakeDamage(20);
+            Debug.Log("house hit works");
         }
         
-        Debug.Log("hit works");
+        if (other.collider.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(20);
+            Debug.Log("gun dmg works");
+        }
+
     }
  
 
@@ -39,14 +45,15 @@ public class CarHealthSO : MonoBehaviour
     private void Update()
     {
        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-            
-        } 
         if (currentHealth <= 20)
         {
-            CreatFire();
+            if (!setFire.isPlaying)
+            {
+                setFire.Play();
+            }
+            {
+                
+            }
             
             Debug.Log("There is Fire");
         }

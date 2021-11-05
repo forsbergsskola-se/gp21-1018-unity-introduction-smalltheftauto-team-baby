@@ -12,5 +12,11 @@ public class BulletScriptSO : MonoBehaviour
     {
         Destroy(gameObject);
         Destroy(gameObject, 4f);
-    }
+        
+       
+    } 
+    
+    
+   
+
 }
