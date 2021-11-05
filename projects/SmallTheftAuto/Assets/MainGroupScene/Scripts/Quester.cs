@@ -5,7 +5,7 @@ using UnityEngine;
 public class Quester : MonoBehaviour{
 
     public Quest quest;
-    public GameObject FloatingTextQuestAcceptedPrefab; 
+     
     void Update(){
         if (Input.GetButton("Interact-Phonebooth"))
         {
@@ -28,16 +28,10 @@ public class Quester : MonoBehaviour{
                 }
             }
 
-            if (FloatingTextQuestAcceptedPrefab != null)
-            {
-                ShowFloatingText();
-            }
+            
         }
     }
 
-    void ShowFloatingText()
-    {
-        Instantiate(FloatingTextQuestAcceptedPrefab, transform.position, Quaternion.identity, transform);
-    }
+    
 
 }
