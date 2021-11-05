@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Quester : MonoBehaviour{
+
+    Quest quest;
     void Update(){
         if (Input.GetButton("Interact-Phonebooth")){
             PhoneBox[] phones = FindObjectsOfType<PhoneBox>();
@@ -16,7 +18,9 @@ public class Quester : MonoBehaviour{
                }
             }
             if (!(closestPhone == null)){
-                closestPhone.StartQuest();
+                if (quest == null){
+                    quest = closestPhone.StartQuest();
+                }
             }
         }
     }
