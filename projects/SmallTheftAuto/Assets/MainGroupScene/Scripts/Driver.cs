@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Driver : MonoBehaviour{
+    public CameraFollow camera;
 
     void Update(){
         if (Input.GetButton("Interact-Vehicle")){
@@ -20,6 +21,8 @@ public class Driver : MonoBehaviour{
 
             if (!(closestCar == null)){
                 closestCar.EnterCar(this);
+                camera.targetPlayer = closestCar.gameObject;
+                closestCar.camera = camera;
             }
         }
     }
