@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatingText : MonoBehaviour
+public class FloatingTextWASTED : MonoBehaviour
 {
 
     public float DestroyTime = 3f;
