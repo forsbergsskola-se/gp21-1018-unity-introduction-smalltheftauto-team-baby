@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Quester : MonoBehaviour{
+    public GameObject FloatingTextQuestAcceptedPrefab; 
 
-    public Quest quest;
+    public Quest quest = null;
     void Update(){
-        Debug.Log("meow");
         if (Input.GetButton("Interact-Phonebooth")){
             PhoneBox[] phones = FindObjectsOfType<PhoneBox>();
             PhoneBox closestPhone = null;
@@ -23,11 +23,17 @@ public class Quester : MonoBehaviour{
             if (!(closestPhone == null)){
                 if (quest == null){
                     quest = closestPhone.StartQuest();
+                    ShowFloatingText();
                 }
                 if (quest.carDead){
                     closestPhone.HandInQuest(this);
                 }
             }
         }
+    }
+
+    void ShowFloatingText()
+    {
+        Instantiate(FloatingTextQuestAcceptedPrefab, transform.position, Quaternion.identity, transform);
     }
 }
