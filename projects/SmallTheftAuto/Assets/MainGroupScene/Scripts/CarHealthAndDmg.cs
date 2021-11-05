@@ -16,9 +16,15 @@ public class CarHealthAndDmg : MonoBehaviour
         if (other.collider.gameObject.CompareTag("House"))
         {
             TakeDamage(20);
+            Debug.Log("house hit works");
         }
         
-        Debug.Log("hit works");
+        if (other.collider.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(20);
+            Debug.Log("gun dmg works");
+        }
+        
     }
  
 
