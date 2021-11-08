@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
 
         if (FloatingTextWASTEDPrefab != null)
         {
+            //Could use Invoke That i wrote in FloatingText.
             ShowFloatingText();
         }
         

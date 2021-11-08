@@ -36,4 +36,9 @@ public class PlayerMovement : MonoBehaviour{
             transform.Rotate(0f, 0f, -turnSpeed*Time.deltaTime*Input.GetAxis("Horizontal"));
         }
     }
+    // This code block could be made into 4 lines of code. var horizontal = Input.GetAxis("Horizontal") * rotSpeed* Time.deltaTime;
+    
+    // var vertical = Input.GetAxis("Vertical") * speed*Time.deltaTime;
+    // transform.Translate(0,vertical,0 );
+    // transform.Rotate(0, 0, -horizontal);
 }

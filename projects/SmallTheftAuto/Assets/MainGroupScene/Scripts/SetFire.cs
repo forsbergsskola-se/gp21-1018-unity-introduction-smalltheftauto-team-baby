@@ -38,7 +38,7 @@ public class SetFire : MonoBehaviour
     {
         currentHealth -= damage;
 
-        
+        //Pick one Take Damage methode picus you have to Takedamage methodes in sepretscript.
     }
     
     private void Update()
