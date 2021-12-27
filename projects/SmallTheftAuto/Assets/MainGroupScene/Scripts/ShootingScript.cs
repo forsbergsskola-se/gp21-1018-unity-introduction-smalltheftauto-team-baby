@@ -76,7 +76,7 @@ public class ShootingScript : MonoBehaviour
       
       
       
-      
+      // TODO: Nice solution!
       private void Reload()
       {
         realoding = true;

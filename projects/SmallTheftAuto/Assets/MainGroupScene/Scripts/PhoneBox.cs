@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Off to a good start, but then you ran out of time I guess?
 public class PhoneBox : MonoBehaviour{
     
     public GameObject FloatingTextQuestAcceptedPrefab; 

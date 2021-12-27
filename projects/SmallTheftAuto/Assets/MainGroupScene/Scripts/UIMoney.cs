@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO: Nice, I like that you split money, score etc. into multiple scripts
 public class UIMoney : MonoBehaviour
 {
     public static UIMoney instance;

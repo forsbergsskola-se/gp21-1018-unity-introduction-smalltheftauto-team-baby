@@ -36,8 +36,9 @@ public class ScoreManager : MonoBehaviour
     {
         score += 1;
         scoreText.text = score.ToString() + " POINTS";
+        // TODO: A good start to implementing savegames, but not what was asked for.
         if(highscore < score)
-        PlayerPrefs.SetInt("highscore", score);
+            PlayerPrefs.SetInt("highscore", score);
         
     }
 }

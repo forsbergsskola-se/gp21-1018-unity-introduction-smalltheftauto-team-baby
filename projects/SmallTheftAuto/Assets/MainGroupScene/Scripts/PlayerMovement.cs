@@ -19,7 +19,10 @@ public class PlayerMovement : MonoBehaviour{
     }
     
     void FixedUpdate(){
-        
+        // TODO: Oh no, if you use deltaTime, you should put it in Update. Else, it does not make sense.
+        // We use deltaTime to make sure that it uses the time that has passed between two frames.
+        // If you use FixedUpdate, use `fixedDeltaTime`
+        // Also, you don't need any of the if clauses here. Because the axis already is zero, if the button is not pressed.
         if (Input.GetButton("Interact-Forward")){
             transform.Translate(0f, moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
         }

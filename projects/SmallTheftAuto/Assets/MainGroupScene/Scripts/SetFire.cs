@@ -16,10 +16,10 @@ public class SetFire : MonoBehaviour
         currentHealth = maxHealth;
        
     }
-    
+    // TODO: You seem to have a lot of duplicate code between `CarHealthAndDmg` and `SetFire` this should be doable with only one class for the damage handling and one for just the burning.
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        // TODO: Make sure that all your houses have this Tag.
         if (other.collider.gameObject.CompareTag("House"))
         {
             TakeDamage(20);
