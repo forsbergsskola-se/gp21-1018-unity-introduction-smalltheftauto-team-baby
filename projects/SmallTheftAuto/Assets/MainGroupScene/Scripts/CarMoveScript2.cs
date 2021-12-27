@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: This looks more like it, but I guess you were not able to use it? :)
 public class CarMoveScript2 : MonoBehaviour
 {
     public float driftFactor = 0.95f;

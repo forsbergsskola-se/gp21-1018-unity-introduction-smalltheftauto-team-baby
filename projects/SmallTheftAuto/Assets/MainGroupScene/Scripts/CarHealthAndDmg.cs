@@ -45,6 +45,7 @@ public class CarHealthAndDmg : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // TODO: This helped me test the game, but should be removed
             TakeDamage(20);
             
         } 
@@ -62,6 +63,7 @@ public class CarHealthAndDmg : MonoBehaviour
     } 
     
     private void CarDeath() { //Please make this run when car dies
+        // TODO: This throws a lot of exceptions
         Quester quester = FindObjectsOfType<Quester>()[0];
         if (!(quester.quest == null)){
            quester.quest.carDead = true;

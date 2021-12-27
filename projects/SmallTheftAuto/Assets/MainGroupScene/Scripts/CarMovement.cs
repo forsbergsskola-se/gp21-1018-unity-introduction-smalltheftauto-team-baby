@@ -20,6 +20,8 @@ public class CarMovement : MonoBehaviour{
 
         // 2: assign to desired axis of inputVector and name appropriately
         // inputVector.y = Input.GetAxis("Vertical");
+        
+        // TODO: This is not utilizing game physics
         if (Input.GetButton("Interact-Forward")){
             transform.Translate(0f, moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"), 0f);
         }

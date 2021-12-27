@@ -18,6 +18,7 @@ public class CameraFollow : MonoBehaviour
         if(targetPlayer == null){
             return;
         }
+        // TODO: This is functional, but quite ugly. It would be better, if someone would just replace the `target`-Field on this class whenever necessary. And if there's not targetPlayer and targetCar in parallel.
         if(targetPlayer.activeInHierarchy){
             rigTransform.position = Vector3.Lerp(rigTransform.position, targetPlayer.transform.position, 
                 Time.deltaTime * moveSpeed);
